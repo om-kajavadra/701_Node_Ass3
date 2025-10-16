@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head><title>Employee Form</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"></head>
+<body class="container py-4">
+  <h3><%= employee ? 'Edit' : 'Add' %> Employee</h3>
+  <% if (error) { %><div class="alert alert-danger"><%= error %></div><% } %>
+  <form method="post">
+    <div class="mb-3"><input name="name" class="form-control" placeholder="Name" value="<%= employee ? employee.name : '' %>"/></div>
+    <div class="mb-3"><input name="email" class="form-control" placeholder="Email" value="<%= employee ? employee.email : '' %>"/></div>
+    <div class="mb-3"><input name="basicSalary" class="form-control" placeholder="Basic Salary" value="<%= employee ? employee.basicSalary : '' %>"/></div>
+    <div class="mb-3"><input name="hra" class="form-control" placeholder="HRA" value="<%= employee ? employee.hra : '' %>"/></div>
+    <div class="mb-3"><input name="allowances" class="form-control" placeholder="Allowances" value="<%= employee ? employee.allowances : '' %>"/></div>
+    <div class="mb-3"><input name="deductions" class="form-control" placeholder="Deductions" value="<%= employee ? employee.deductions : '' %>"/></div>
+    <button class="btn btn-primary">Save</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Node
+node_modules/
+
+
+
+/employee-react/node_modules/
+/employee-react/dist/
+/employee-react/.env
+/backend/.env
+/backend/node_modules/

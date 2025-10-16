@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head><title>Admin Dashboard</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"></head>
+<body class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>Employees</h3>
+    <div>
+      <a href="/admin/employee/new" class="btn btn-success">Add Employee</a>
+      <form action="/admin/logout" method="post" style="display:inline;"><button class="btn btn-secondary">Logout</button></form>
+    </div>
+  </div>
+
+  <table class="table table-striped">
+    <thead><tr><th>empId</th><th>Name</th><th>Email</th><th>Net Salary</th><th>Actions</th></tr></thead>
+    <tbody>
+      <% employees.forEach(function(emp){ %>
+        <tr>
+          <td><%= emp.empId %></td>
+          <td><%= emp.name %></td>
+          <td><%= emp.email %></td>
+          <td><%= emp.netSalary %></td>
+          <td>
+            <a class="btn btn-sm btn-primary" href="/admin/employee/<%= emp._id %>/edit">Edit</a>
+            <form style="display:inline" method="post" action="/admin/employee/<%= emp._id %>/delete">
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
